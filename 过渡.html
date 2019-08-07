@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过渡特效-多样式改变</title>
+    <style>
+    div:nth-of-type(1){
+        width: 150px;
+        height: 150px;
+        background:#48ef96;
+        float: left;
+        margin-right: 50px;
+        transition: width 2s, height 2s, transform 2s;
+    }
+    div:nth-of-type(1):hover{
+        width: 200px;
+        height: 200px;
+        transform: skew(40deg,50deg);
+    }
+    div:nth-of-type(2){
+        width: 150px;
+        height: 150px;
+        background:#48ef96;
+        float: left;
+        /* 要运动的样式 */
+        transition-property: all;
+        /* 完成效果需要的时间 */
+        transition-duration: 4s;
+        /* 定义动画延迟开始的时间 */
+        transition-delay: 1s;
+        /* 运动的曲线 */
+        transition-timing-function: linear;
+    }
+    div:nth-of-type(2):hover{
+        background: pink;
+        /* 倾斜的角度 */
+        transform: skew(40deg,50deg);
+    }
+    </style>
+</head>
+<body>
+    <!-- 当点击该正方形时，宽高变为150*150，倾斜度为40,40  使用过渡慢慢显示变化效果 -->
+    <div></div>
+    <!-- 基本效果和第一个div一样，增加了切换颜色，以及鼠标移开后恢复为正方形 -->
+    <div></div>
+</body>
+</html>
